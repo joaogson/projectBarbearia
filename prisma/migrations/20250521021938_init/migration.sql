@@ -1,0 +1,15 @@
+-- CreateTable
+CREATE TABLE "Service" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "Date" DATETIME NOT NULL,
+    "BarberId" INTEGER NOT NULL,
+    CONSTRAINT "Service_BarberId_fkey" FOREIGN KEY ("BarberId") REFERENCES "Barber" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "Barber" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "name" TEXT NOT NULL,
+    "cellphone" TEXT NOT NULL,
+    "email" TEXT NOT NULL
+);
